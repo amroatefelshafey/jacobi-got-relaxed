@@ -23,13 +23,16 @@ for j in range(cols - 1):
     #check if the max is not in the current row, if not? swap them
     if MaxInCol != i:
       matrix[[i, MaxInCol]] = matrix[[MaxInCol, i]]
+    #print("Matrix after swapping: ",matrix)
     # this should divide the value of the element in the diagonal position
     # by the entire row, normalizing the value to 1
     matrix[j] = matrix[j] / matrix[j, j]
+    #print("Matrix after div1: ",matrix)
     for i in range(rows):
       if i == j:
         continue
       matrix[i] = matrix[i] - (matrix[i, j] * matrix[j])
+    #print("Matrix after div2: ",matrix,'\n-------------------------')
 
 print(f"matrix after change\n {matrix}")
 
